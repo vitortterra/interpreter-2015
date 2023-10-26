@@ -8,9 +8,9 @@ statements {
 		for j init 1 while j <= 5 new j+1 do
 			for k init 1 while k <= 5 new k+1 do
 				A[i,j,k,i,j,k,i] = i + j + k;
-	write("Elementos acessados: ", (i-1)*(j-1)*(k-1), "\n");
-	write("Elemento A[1,2,3,1,2,3,1]: ", A[1,2,3,1,2,3,1], "\n");
+	write("Number of elements accessed: ", (i-1)*(j-1)*(k-1), "\n");
+	write("Element at A[1,2,3,1,2,3,1]: ", A[1,2,3,1,2,3,1], "\n");
 	A[12,9,5,1,2,6,7] = A[1,2,3,1,2,3,1] + A[4,3,2,4,3,2,4];
-	write("Elemento A[12,9,5,1,2,6,7]: ", A[12,9,5,1,2,6,7], "\n");
+	write("Element at A[12,9,5,1,2,6,7]: ", A[12,9,5,1,2,6,7], "\n");
 }
 }}}
