@@ -1,0 +1,35 @@
+program MchooseN {{{
+global {int comb;}
+int function fat (int n)
+local {int i, fat;}
+statements {
+	if n < 0 || n > 7 then fat = ~1;
+	else {
+		fat = 1; i = 2;
+		while i <= n do {
+			fat = fat * i;
+			i = i + 1;
+		}
+	}
+	return fat;
+}
+main
+local {char c; int m, n;}
+statements {
+	repeat {
+		write ("Compute m choose n? (y/n): ");
+		repeat read (c); while c != 'y' && c != 'n';
+		write (c, "\n");
+		if c == 'y' then {
+			write ("\n m: "); read (m); write(m);
+			write ("\n n: "); read (n); write(n);
+			if m <= 0 || m > 7 || n <= 0 || m < n then
+				write ("\n Invalid input data \n\n");
+			else {
+				comb = fat(m) / (fat(m-n) * fat(n));
+				write ("\n m choose n: ", comb, "\n\n");
+			}
+		}
+	} while c == 'y';
+}
+}}}
