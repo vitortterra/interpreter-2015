@@ -1,0 +1,16 @@
+program arrayMultipleDims {{{
+main
+local {int a, i, j, k, A[13,10,7,7,7,7,7];}
+statements {
+	a = 2;
+	A[1,1,1,1,1,1,1] = a + 2;
+	for i init 1 while i <= 5 new i+1 do
+		for j init 1 while j <= 5 new j+1 do
+			for k init 1 while k <= 5 new k+1 do
+				A[i,j,k,i,j,k,i] = i + j + k;
+	write("Elementos acessados: ", (i-1)*(j-1)*(k-1), "\n");
+	write("Elemento A[1,2,3,1,2,3,1]: ", A[1,2,3,1,2,3,1], "\n");
+	A[12,9,5,1,2,6,7] = A[1,2,3,1,2,3,1] + A[4,3,2,4,3,2,4];
+	write("Elemento A[12,9,5,1,2,6,7]: ", A[12,9,5,1,2,6,7], "\n");
+}
+}}}
