@@ -1,0 +1,43 @@
+program BubbleSort {{{
+main
+local {
+	int n, i, p, aux, V[50];
+	logic trocou;
+}
+statements{
+
+/*	Leitura do vetor a ser ordenado	*/
+	read (n);
+	write ("Numero de elementos: ", n);
+	for i init 1 while i <= n new i + 1 do {
+		read (V[i]);
+	}
+	
+/*	Escrita do vetor desordenado	*/
+	write ("\n\nVetor desordenado:\n\n");
+	for i init 1 while i <= n new i + 1 do {
+		write (V[i], " ");
+	}
+	
+/*	Aplicação do metodo bubble-sort	*/
+	trocou = true;
+	for p init n - 2 while p >= 0 && trocou == true new p - 1 do {
+		trocou = false;
+		for i init 1 while i <= p + 1 new i + 1 do {
+			if V[i] > V[i + 1] then {
+				aux = V[i];
+				V[i] = V[i + 1];
+				V[i + 1] = aux;
+				trocou = true;
+			}
+		}
+	}
+	
+/*	Escrita do vetor ordenado	*/
+	write ("\n\nVetor ordenado:\n\n");
+	for i init 1 while i <= n new i + 1 do {
+		write (V[i], " ");
+	}
+	write("\n");
+}
+}}}
